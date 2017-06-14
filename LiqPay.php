@@ -20,7 +20,7 @@
  * LIQPAY API       https://www.liqpay.com/ru/doc
  *
  */
-
+namespace maks757\liqpay;
 /**
  * Payment method liqpay process
  *

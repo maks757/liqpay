@@ -1,24 +1,22 @@
 {
-    "name":"liqpay/liqpay",
-    "type": "library",
+    "name": "maks757/liqpay",
     "description": "SDK for Liqpay",
     "keywords": ["liqpay","pay"],
     "homepage": "https://github.com/liqpay/sdk-php",
-    "license": "OSL 3.0",
+    "type": "yii2-extension",
     "authors": [
         {
-            "name": "Liqpay",
-            "email": "support@liqpay.com",
-            "homepage": "https://www.liqpay.com/",
-            "role": "Developer"
+            "name": "Max Cherednyk",
+            "email": "maks757q@gmail.com"
         }
     ],
-    "require":{
+    "require": {
+        "yiisoft/yii2": ">=2.0.4",
         "php":">=5.3.0"
     },
-    "autoload":{
-        "classmap":[
-            "./LiqPay.php"
-        ]
+    "autoload": {
+        "psr-4": {
+            "maks757\\liqpay\\": ""
+        }
     }
 }
