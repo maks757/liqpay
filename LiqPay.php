@@ -21,6 +21,8 @@
  *
  */
 namespace maks757\liqpay;
+use InvalidArgumentException;
+
 /**
  * Payment method liqpay process
  *
@@ -90,8 +92,8 @@ class LiqPay
         $data        = base64_encode(json_encode(array_merge(compact('public_key'), $params)));
         $signature   = base64_encode(sha1($private_key.$data.$private_key, 1));
         $postfields  = http_build_query(array(
-           'data'  => $data,
-           'signature' => $signature
+            'data'  => $data,
+            'signature' => $signature
         ));
 
         $ch = curl_init();
@@ -134,7 +136,7 @@ class LiqPay
         $params    = $this->cnb_params($params);
         $data      = base64_encode(json_encode($params));
         $signature = $this->cnb_signature($params);
-        
+
         return sprintf('
             <form method="POST" action="%s" accept-charset="utf-8">
                 %s
